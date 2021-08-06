@@ -38,7 +38,7 @@ section {
 }
 section h1 {
   font-family: "Lobster", "Butler", Georgia, Times, serif;
-  font-size: 3.5em;
+  font-size: 3.5rem;
   letter-spacing: -0.05em;
 }
 section h3,
@@ -52,61 +52,66 @@ footer h2 {
 #header-link {
   cursor: pointer;
 }
-.frontispiece-spacer {
+.spacer {
+  height: 137.5px;
+}
+.frontispiece .spacer {
   height: 550px;
 }
 .frontispiece-image {
   width: 110%;
   margin-left: -5%;
 }
-.frontispiece-title {
+.title {
   text-align: center;
   position: -webkit-sticky;
   position: sticky;
-  top: 40vh;
   width: fit-content;
   margin-top: -1em;
 }
-.frontispiece-subtitle {
+.frontispiece .title {
+  top: 40vh;
+}
+.subtitle {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: -1;
-  margin-bottom: 3.5em;
+  margin-bottom: 3.5rem;
 }
-.frontispiece-subtitle * {
+.subtitle * {
   text-align: center;
   font-weight: 300;
 }
-.frontispiece-subtitle .fr {
+.subtitle .fr {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 .header {
-  top: -0.5em;
+  top: -0.5rem;
 }
-.frontispiece-header {
+.header {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   padding: 10px 0;
-  margin-bottom: 3.5em;
+  margin-bottom: 3.5rem;
 }
-.frontispiece-header nav {
+.header nav {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.frontispiece-header .links {
+.header .links {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.frontispiece-header .social li {
+.header .social li {
   padding-right: 20px;
 }
-.frontispiece-header .local li {
+.header .local li {
   padding-left: 20px;
   font-weight: 200;
 }
@@ -126,28 +131,45 @@ footer {
   #header-dropdown {
     display: none;
   }
-  .frontispiece {
-    transition: all 1s;
-  }
-  .frontispiece.fixed {
-    position: fixed;
+  .header-container {
     top: -200px;
   }
-  .frontispiece.fixed.drop-down {
+  .header-container.fixed {
+    transition: all 1s;
     position: fixed;
+    width: calc(100vw / 6 * 4);
+    height: 6rem;
+    background-color: white;
+  }
+  .header-container.fixed .header {
+    position: relative;
     top: 0;
+  }
+  .header-container.fixed .title {
+    position: relative;
+    top: 0;
+  }
+  .header-container.fixed .subtitle {
+    position: relative;
+    top: -6.9rem;
+  }
+  .header-container.fixed .frontispiece-spacer {
+    height: 0;
+  }
+  .header-container.fixed.drop-down {
+    top: 0px;
   }
 }
 /*@media screen and (max-width : 420px) {*/
 @media screen and (max-width: 1035px) {
-  .frontispiece-title {
+  .title {
     text-align: left;
     line-height: 0.8;
   }
-  .frontispiece-subtitle {
+  .subtitle {
     position: relative;
   }
-  .frontispiece-subtitle * {
+  .subtitle * {
     text-align: left;
   }
   #header-dropdown {
@@ -163,31 +185,31 @@ footer {
         right: 30px;
         z-index: 2;
     }*/
-  .frontispiece-title {
+  .title {
     transition: all 1s;
     z-index: 2;
   }
-  .frontispiece-title.show {
+  .title.show {
     position: fixed;
     top: 30px;
     margin-top: 0;
   }
-  .frontispiece-header {
+  .header {
     width: 100%;
     max-width: calc(100vw / 6 * 4);
     display: flex;
     justify-content: flex-end;
     background-color: white;
   }
-  .frontispiece-header.show {
+  .header.show {
     position: fixed;
     top: 0;
     z-index: 2;
   }
-  .frontispiece-header nav {
+  .header nav {
     transition: all 1s;
   }
-  .frontispiece-header.show nav {
+  .header.show nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -200,16 +222,16 @@ footer {
     overflow: auto; /* Enable scroll if needed */
     background-color: white;
   }
-  .frontispiece-header nav .links {
+  .header nav .links {
     display: none; /* Hidden by default */
     flex-direction: column;
     align-items: center;
   }
-  .frontispiece-header.show nav .links {
+  .header.show nav .links {
     display: flex;
   }
-  .frontispiece-header .social li,
-  .frontispiece-header .local li {
+  .header .social li,
+  .header .local li {
     padding-right: 0;
     padding-left: 0;
     padding-bottom: 20px;

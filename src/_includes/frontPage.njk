@@ -3,32 +3,35 @@ layout: baseGrid.njk
 ---
 
 
-            <section class='frontispiece'>
-                <img class='frontispiece-image' id='header-link' src='assets/images/frontispiece-image.png'/>
-                <div class='frontispiece-header'>
-                     <a href='javascript:void(0);' class='icon' id='header-dropdown'><i class="fa fa-bars"></i></a>
-                    <nav>
-                        <ul class='links social'>
-                            <li><a href="https://ca.linkedin.com/in/waltermuschenheim/" class="icon"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="https://github.com/WalterMuschenheim/" class="icon"><i class="fa fa-github"></i></a></li>
-                        </ul>
-                        <ul class='links local'>
-                            <li ><a href='javascript:void(0);'id='info-link'>info</a></li>
-                            <li><a href='/cv'>curriculum vitae</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <h1 class='frontispiece-title'>{{site.title}}</h1>
-                <div class='frontispiece-subtitle'>
-                    <h3 class='fr'>{{bio.profession.fr | safe}}</h3>
-                    <h3 class='en'>{{bio.profession.en | safe}}</h3>
-                </div>
-                <div class='frontispiece-spacer'></div>
-            </section>
-            <section class='titlepage'>
-                <div class='info'>
-                    {{content | safe}}
-                </div>
-                <div class='frontispiece-spacer'></div>
-            </section>
-            {% include footer.njk %}
+<section class='frontispiece'>
+    <img class='frontispiece-image' id='header-link' src='assets/images/frontispiece-image.png'/>
+    <div class='header-container'>
+        <div class='header'>
+            <a href='javascript:void(0);' class='icon' id='header-dropdown'><i class="fa fa-bars"></i></a>
+            <nav>
+                <ul class='links social'>
+                    <li><a href="https://ca.linkedin.com/in/waltermuschenheim/" class="icon"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://github.com/WalterMuschenheim/" class="icon"><i class="fa fa-github"></i></a></li>
+                </ul>
+                <ul class='links local'>
+                    <li ><a href='javascript:void(0);'id='info-link'>info</a></li>
+                    <li><a href='/cv'>curriculum vitae</a></li>
+                </ul>
+            </nav>
+        </div>
+        <h1 class='title'>{{site.title}}</h1>
+        <div class='subtitle'>
+            <h3 class='fr'>{{bio.profession.fr | safe}}</h3>
+            <h3 class='en'>{{bio.profession.en | safe}}</h3>
+        </div>
+        <div class='spacer'></div>
+    </div>
+</section>
+<section class='titlepage'>
+    <div class='info'>
+        {{content | safe}}
+    </div>
+    <div class='spacer'></div>
+    <div class='spacer'></div>
+</section>
+{% include 'footer.njk' %}

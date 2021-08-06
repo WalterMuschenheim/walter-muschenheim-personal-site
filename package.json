@@ -1,0 +1,14 @@
+{
+  "name": "frontpage",
+  "version": "1.0.0",
+  "description": "The front page for Walter Muschenheim's personal site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Walter Muschenheim",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1"
+  }
+}

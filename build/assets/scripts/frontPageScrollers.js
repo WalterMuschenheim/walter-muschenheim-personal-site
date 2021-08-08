@@ -9,10 +9,14 @@ document.querySelector("#header-link").addEventListener("click", () => {
   document.querySelector(".header").focus();
 });
 
-document.querySelector("#info-link").addEventListener("click", () => {
+function sectionScroller(sectionName) {
+  // document
+  //   .querySelector(`#${sectionName}-link`)
+  //   .addEventListener("click", () => {
   const scrollPosition =
-    document.querySelector(".info").getBoundingClientRect().bottom -
-    document.querySelector(".info").getBoundingClientRect().height / 2 +
+    document.querySelector(`.${sectionName}`).getBoundingClientRect().bottom -
+    document.querySelector(`.${sectionName}`).getBoundingClientRect().height /
+      2 +
     window.pageYOffset -
     window.innerHeight / 2 +
     (window.innerHeight > window.innerWidth
@@ -20,11 +24,12 @@ document.querySelector("#info-link").addEventListener("click", () => {
       : 0);
 
   window.scroll({ top: scrollPosition, left: 0, behavior: "smooth" });
-  document.querySelector(".info").focus();
+  document.querySelector(`.${sectionName}`).focus();
   document.querySelector(".header").classList.remove("show");
   document.querySelector("#header-dropdown").classList.remove("show");
   document.querySelector(".title").classList.remove("show");
-});
+  // });
+}
 
 let scrolling = false;
 let lastScrollY = 0;

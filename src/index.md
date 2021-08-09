@@ -1,4 +1,4 @@
 ---
 layout: frontPage.njk
-title: "frontPage"
+title: frontPage
 ---

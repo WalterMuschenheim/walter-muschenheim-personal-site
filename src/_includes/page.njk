@@ -1,6 +1,5 @@
----
-layout: baseGrid.njk
----
+{% extends 'base.njk' %}
+
 {% macro sections(section) %}
 <section class='{{ section.data.linkTitle }}'>
     <div class='info'>
@@ -12,10 +11,19 @@ layout: baseGrid.njk
 </section>
 {% endmacro %}
 
-{{ content | safe }}
+{% block page %}
+
+{% block inner %}
+<section class='page-header'>
+    <img class='page-header-image' id='header-link' src='assets/images/frontispiece-image.png'/>
+    {% include 'components/header.njk' %}
+</section>
+{% endblock %}
 
 {% for section in collections[eleventyComputed.collection] %}
 {{sections(section)}}
 {% endfor %}
 
 {% include 'components/footer.njk' %}
+
+{% endblock %}

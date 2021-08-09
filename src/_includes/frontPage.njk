@@ -1,10 +1,8 @@
----
-layout: page.njk
----
+{% extends 'page.njk' %}
 
-
+{% block inner %}
 <section class='frontispiece'>
-    <img class='frontispiece-image' id='header-link' src='assets/images/frontispiece-image.png'/>
+    <img class='frontispiece-image' id='header-link' title='shadow portrait by Kumi Yamashita' alt='profile of a face created by shadows' src='assets/images/frontispiece-image.png'/>
     {% include 'components/header.njk' %}
 </section>
-
+{% endblock %}

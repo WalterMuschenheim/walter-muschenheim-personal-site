@@ -11,7 +11,6 @@
                 <li><a href="https://github.com/WalterMuschenheim/" class="icon"><i class="fa fa-github"></i></a></li>
             </ul>
             <ul class='links local'>
-                {# <li ><a href='javascript:void(0);'id='info-link' onclick='sectionScroller("info")'>info</a></li> #}
                 {% for section in collections[eleventyComputed.collection] %}
                 {{localLink(section.data.linkTitle, section.data.title)}}
                 {% endfor %}

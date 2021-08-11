@@ -28,3 +28,13 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./build/
           server-dir: ./staging.waltermuschenheim.com/
+          exclude: "
+            - **/butler*
+            - **/Butler*
+            - **/favicon/**
+            - **/main.js
+            - **/main.css
+            - **/avatar.jpg
+            - /cv/**
+            - /cgi-bin/**
+            "

@@ -1,5 +1,5 @@
 ---
-layout: frontPage.njk
+layout: "frontPage.njk"
 pagination:
   data: collections
   size: 1

@@ -14,8 +14,10 @@ function sectionScroller(sectionName) {
   //   .querySelector(`#${sectionName}-link`)
   //   .addEventListener("click", () => {
   const scrollPosition =
-    document.querySelector(`.${sectionName}`).getBoundingClientRect().bottom -
-    document.querySelector(`.${sectionName}`).getBoundingClientRect().height /
+    document.querySelector(`.${sectionName} .info`).getBoundingClientRect()
+      .bottom -
+    document.querySelector(`.${sectionName} .info`).getBoundingClientRect()
+      .height /
       2 +
     window.pageYOffset -
     window.innerHeight / 2 +

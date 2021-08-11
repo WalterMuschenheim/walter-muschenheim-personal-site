@@ -1,8 +1,30 @@
 {% extends 'page.njk' %}
 
+{% set home = collection === 'home' %}
+
+
+
 {% block inner %}
+
+{% if home %}
 <section class='frontispiece'>
     <img class='frontispiece-image' id='header-link' title='shadow portrait by Kumi Yamashita' alt='profile of a face created by shadows' src='/assets/images/frontispiece-image.png'/>
     {% include 'components/header.njk' %}
 </section>
+{% else %}
+{{super()}}
+{% endif %}
+
+{% endblock %}
+
+{% block prefooter %}
+
+{% if home %}
+<section class='frontispiece'>
+    <div class='spacer'></div>
+</section>
+{% else %}
+{{super()}}
+{% endif %}
+
 {% endblock %}

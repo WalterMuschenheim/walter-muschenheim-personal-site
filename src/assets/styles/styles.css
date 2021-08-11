@@ -26,13 +26,12 @@ a:hover {
   color: #26e089;
 }
 a[aria-current] {
-  font-style: italic;
+  color: #178652;
 }
 .container {
   margin-top: -15px;
   display: grid;
   grid-template-columns: 1fr minmax(240px, 4fr) 1fr;
-  width: 100vw;
 }
 section {
   /*position: relative;*/
@@ -61,7 +60,8 @@ footer h2 {
 .frontispiece .spacer {
   height: 550px;
 }
-.frontispiece-image {
+.frontispiece-image,
+.page-header-image {
   width: 110%;
   margin-left: -5%;
 }
@@ -71,6 +71,7 @@ footer h2 {
   position: sticky;
   width: fit-content;
   margin-top: -1em;
+  top: 5vh;
 }
 .frontispiece .title {
   top: 40vh;

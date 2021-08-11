@@ -2,7 +2,7 @@ name: Staging Deploy
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,29 +10,29 @@ jobs:
       run:
         shell: bash
       steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 2
+        - uses: actions/checkout@v2
+          with:
+            fetch-depth: 2
 
-      - name: Install NPM packages
-        run: npm install
-      
-      - name: Generate Site
-        run: npx @11ty/eleventy
-      
-      - name: FTP Deploy to staging.waltermuschenheim.com
+        - name: Install NPM packages
+          run: npm install
+
+        - name: Generate Site
+          run: npx @11ty/eleventy
+
+        - name: FTP Deploy to staging.waltermuschenheim.com
       uses: SamKirkland/FTP-Deploy-Action@4.1.0
       with:
         server: ftp.waltermuschenheim.com
         username: walter@waltermuschenheim.com
         password: ${{ secrets.FTP_PASSWORD }}
         exclude:
-          - **/butler*
-          - **/Butler*
-          - **/favicon/**
-          - **/main.js
-          - **/main.css
-          - **/avatar.jpg
+          - /**/butler*
+          - /**/Butler*
+          - /**/favicon/**
+          - /**/main.js
+          - /**/main.css
+          - /**/avatar.jpg
           - /cv/**
           - /cgi-bin/**
         local-dir: ./build/

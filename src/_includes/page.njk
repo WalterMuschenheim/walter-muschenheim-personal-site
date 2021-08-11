@@ -3,10 +3,20 @@
 {% macro sections(section) %}
 <section class='{{ section.data.linkTitle }}'>
     <div class='info'>
+        {% if section.data.grid %}
+        {% grid %}
+        {% if section.data.subHeading %}
         <h2>{{section.data.subHeading | safe}}</h2>
+        {% endif %}
         {{section.templateContent | safe}}
+        {% endgrid %}
+        {% else %}
+        {% if section.data.subHeading %}
+        <h2>{{section.data.subHeading | safe}}</h2>
+        {% endif %}
+        {{section.templateContent | safe}}
+        {% endif %}
     </div>
-    <div class='spacer'></div>
     <div class='spacer'></div>
 </section>
 {% endmacro %}
@@ -20,7 +30,7 @@
 </section>
 {% endblock %}
 
-{% for section in collections[eleventyComputed.collection] %}
+{% for section in collections[collection] %}
 {{sections(section)}}
 {% endfor %}
 

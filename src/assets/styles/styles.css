@@ -25,6 +25,9 @@ a {
 a:hover {
   color: #26e089;
 }
+a[aria-current] {
+  font-style: italic;
+}
 .container {
   margin-top: -15px;
   display: grid;
@@ -118,8 +121,11 @@ footer h2 {
 .section-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  align-items: center;
+  align-items: top;
   grid-gap: 1rem;
+}
+footer::before {
+  height: 550px;
 }
 footer {
   height: 150px;
@@ -128,6 +134,7 @@ footer {
   grid-column-end: -2;
   /* box-shadow: inset 0 3px 10px rgb(0 0 0 / 0.2); */
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   margin-bottom: 30px;

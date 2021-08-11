@@ -1,6 +1,9 @@
 {% macro localLink(linkName, title) %}
 <li ><a href='javascript:void(0);'id='{{linkName}}-link' onclick='sectionScroller("{{linkName}}")'>{{title}}</a></li>
 {% endmacro %}
+{% macro pageLink(linkName, title) %}
+<li ><a href='/{{linkName | slug}}'>{{title | camelToSpace}}</a></li>
+{% endmacro %}
 
 <div class='header-container'>
     <div class='header'>
@@ -11,9 +14,14 @@
                 <li><a href="https://github.com/WalterMuschenheim/" class="icon"><i class="fa fa-github"></i></a></li>
             </ul>
             <ul class='links local'>
-                {% for section in collections[eleventyComputed.collection] %}
+                {% for section in collections[collection] %}
                 {{localLink(section.data.linkTitle, section.data.title)}}
                 {% endfor %}
+                {% if pagination.pages.length > 1 %}
+                {% for pageEntry in pagination.pages %}
+                <li><a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>{{ pageEntry | camelToSpace }}</a></li>
+                {% endfor %}
+                {% endif %}
                 <li><a href='/cv'>curriculum vitae</a></li>
             </ul>
         </nav>

@@ -26,14 +26,5 @@ jobs:
           server: ftp.waltermuschenheim.com
           username: walter@waltermuschenheim.com
           password: ${{ secrets.FTP_PASSWORD }}
-          exclude:
-            - /**/butler*
-            - /**/Butler*
-            - /**/favicon/**
-            - /**/main.js
-            - /**/main.css
-            - /**/avatar.jpg
-            - /cv/**
-            - /cgi-bin/**
           local-dir: ./build/
           server-dir: ./staging.waltermuschenheim.com/

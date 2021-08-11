@@ -9,31 +9,31 @@ jobs:
     defaults:
       run:
         shell: bash
-      steps:
-        - uses: actions/checkout@v2
-          with:
-            fetch-depth: 2
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
 
-        - name: Install NPM packages
-          run: npm install
+      - name: Install NPM packages
+        run: npm install
 
-        - name: Generate Site
-          run: npx @11ty/eleventy
+      - name: Generate Site
+        run: npx @11ty/eleventy
 
-        - name: FTP Deploy to staging.waltermuschenheim.com
-      uses: SamKirkland/FTP-Deploy-Action@4.1.0
-      with:
-        server: ftp.waltermuschenheim.com
-        username: walter@waltermuschenheim.com
-        password: ${{ secrets.FTP_PASSWORD }}
-        exclude:
-          - /**/butler*
-          - /**/Butler*
-          - /**/favicon/**
-          - /**/main.js
-          - /**/main.css
-          - /**/avatar.jpg
-          - /cv/**
-          - /cgi-bin/**
-        local-dir: ./build/
-        server-dir: ./staging.waltermuschenheim.com/
+      - name: FTP Deploy to staging.waltermuschenheim.com
+    uses: SamKirkland/FTP-Deploy-Action@4.1.0
+    with:
+      server: ftp.waltermuschenheim.com
+      username: walter@waltermuschenheim.com
+      password: ${{ secrets.FTP_PASSWORD }}
+      exclude:
+        - /**/butler*
+        - /**/Butler*
+        - /**/favicon/**
+        - /**/main.js
+        - /**/main.css
+        - /**/avatar.jpg
+        - /cv/**
+        - /cgi-bin/**
+      local-dir: ./build/
+      server-dir: ./staging.waltermuschenheim.com/

@@ -122,7 +122,7 @@ footer h2 {
 .section-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  align-items: top;
+  align-items: start;
   grid-gap: 1rem;
 }
 .section-container .sub-heading-grid {

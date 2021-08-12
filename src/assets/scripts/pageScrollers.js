@@ -1,18 +1,17 @@
-document.querySelector("#header-link").addEventListener("click", () => {
-  const scrollPosition =
-    document.querySelector(".subtitle").getBoundingClientRect().bottom +
-    window.pageYOffset -
-    window.innerHeight +
-    20;
+if (document.querySelector("#header-link")) {
+  document.querySelector("#header-link").addEventListener("click", () => {
+    const scrollPosition =
+      document.querySelector(".subtitle").getBoundingClientRect().bottom +
+      window.pageYOffset -
+      window.innerHeight +
+      20;
 
-  window.scroll({ top: scrollPosition, left: 0, behavior: "smooth" });
-  document.querySelector(".header").focus();
-});
+    window.scroll({ top: scrollPosition, left: 0, behavior: "smooth" });
+    document.querySelector(".header").focus();
+  });
+}
 
 function sectionScroller(sectionName) {
-  // document
-  //   .querySelector(`#${sectionName}-link`)
-  //   .addEventListener("click", () => {
   const scrollPosition =
     document.querySelector(`.${sectionName} .info`).getBoundingClientRect()
       .bottom -
@@ -24,13 +23,11 @@ function sectionScroller(sectionName) {
     (window.innerHeight > window.innerWidth
       ? document.querySelector(".header").getBoundingClientRect().height
       : 0);
-
   window.scroll({ top: scrollPosition, left: 0, behavior: "smooth" });
   document.querySelector(`.${sectionName}`).focus();
   document.querySelector(".header").classList.remove("show");
   document.querySelector("#header-dropdown").classList.remove("show");
   document.querySelector(".title").classList.remove("show");
-  // });
 }
 
 let scrolling = false;
@@ -43,19 +40,22 @@ document.addEventListener("scroll", () => {
 setInterval(() => {
   if (scrolling) {
     scrolling = false;
-    if (
-      document.querySelector(".frontispiece + section").getBoundingClientRect()
-        .top < 0
-    ) {
+    nextSection =
+      document.querySelector(".frontispiece") != null
+        ? document.querySelector(".frontispiece + section")
+        : document.querySelector(".page-header + section");
+    pageHeader =
+      document.querySelector(".frontispiece") != null
+        ? document.querySelector(".frontispiece")
+        : document.querySelector(".page-header");
+
+    if (nextSection.getBoundingClientRect().top < 0) {
       if (
         !document.querySelector(".header-container").classList.contains("fixed")
       ) {
-        const frontisHeight = document
-          .querySelector(".frontispiece")
-          .getBoundingClientRect().height;
+        const frontisHeight = pageHeader.getBoundingClientRect().height;
         document.querySelector(".header-container").classList.add("fixed");
-        document.querySelector(".frontispiece").style.minHeight =
-          frontisHeight + "px";
+        pageHeader.style.minHeight = frontisHeight + "px";
       }
       if (window.scrollY > lastScrollY) {
         document
@@ -66,14 +66,14 @@ setInterval(() => {
         document.querySelector(".header-container").classList.add("drop-down");
       }
     } else if (
-      document.querySelector(".frontispiece").getBoundingClientRect().bottom >=
+      pageHeader.getBoundingClientRect().bottom >=
       document.querySelector(".title").getBoundingClientRect().bottom
     ) {
       if (
         document.querySelector(".header-container").classList.contains("fixed")
       ) {
         document.querySelector(".header-container").classList.remove("fixed");
-        document.querySelector(".frontispiece").style.minHeight = "unset";
+        pageHeader.style.minHeight = "unset";
       }
     }
   }

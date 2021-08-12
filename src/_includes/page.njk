@@ -6,13 +6,13 @@
         {% if section.data.grid %}
         {% grid %}
         {% if section.data.subHeading %}
-        <h2>{{section.data.subHeading | safe}}</h2>
+        <h2 class='sub-heading-grid'>{{section.data.subHeading | safe}}</h2>
         {% endif %}
         {{section.templateContent | safe}}
         {% endgrid %}
         {% else %}
         {% if section.data.subHeading %}
-        <h2>{{section.data.subHeading | safe}}</h2>
+        <h2 class='sub-heading'>{{section.data.subHeading | safe}}</h2>
         {% endif %}
         {{section.templateContent | safe}}
         {% endif %}

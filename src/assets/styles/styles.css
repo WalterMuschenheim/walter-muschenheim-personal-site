@@ -125,8 +125,9 @@ footer h2 {
   align-items: top;
   grid-gap: 1rem;
 }
-footer::before {
-  height: 550px;
+.section-container .sub-heading-grid {
+  grid-row-start: 1;
+  grid-row-end: 3;
 }
 footer {
   height: 150px;

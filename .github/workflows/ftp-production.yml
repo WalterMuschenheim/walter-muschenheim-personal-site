@@ -20,7 +20,7 @@ jobs:
       - name: Generate Site
         run: npx @11ty/eleventy
 
-      - name: FTP Deploy to staging.waltermuschenheim.com
+      - name: FTP Deploy to www.waltermuschenheim.com
         uses: SamKirkland/FTP-Deploy-Action@4.1.0
         with:
           server: ftp.waltermuschenheim.com

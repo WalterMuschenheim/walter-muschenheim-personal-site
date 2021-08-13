@@ -248,4 +248,12 @@ footer {
     padding-left: 0;
     padding-bottom: 20px;
   }
+  .section-container {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 0;
+  }
+  .sub-heading,
+  .sub-heading-grid {
+    padding-bottom: 0.5rem;
+  }
 }

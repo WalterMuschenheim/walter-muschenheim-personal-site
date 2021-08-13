@@ -2,7 +2,7 @@
 title: info
 linkTitle: info
 tags: projects
-subHeading: is going through an awkward phase.
+subHeading: here are my current projects.
 ---
 
 He’s changing careers. He went back to school. He’s getting braces (no joke).

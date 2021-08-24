@@ -1,7 +1,7 @@
 ---
 title: contact
 linkTitle: contact
-tags: home
+tags: home, projects
 grid: true
 subHeading: Walter is not currently taking on new freelance translation or development projects.
 ---

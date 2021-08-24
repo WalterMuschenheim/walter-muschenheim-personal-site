@@ -1,7 +1,7 @@
 ---
 title: info
 linkTitle: titlepage
-tags: home
+tags: home, projects
 subHeading: is going through an awkward phase.
 ---
 

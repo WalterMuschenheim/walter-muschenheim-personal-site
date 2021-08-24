@@ -166,7 +166,7 @@ footer {
     position: relative;
     top: -6.9rem;
   }
-  .header-container.fixed .frontispiece-spacer {
+  .header-container.fixed .spacer {
     height: 0;
   }
   .header-container.fixed.drop-down {

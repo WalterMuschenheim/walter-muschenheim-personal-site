@@ -5,7 +5,7 @@ tags: home
 subHeading: is going through an awkward phase.
 ---
 
-Are we finally done with that bullshit? He’s changing careers. He went back to school. He’s getting braces (no joke).
+He’s changing careers. He went back to school. He’s getting braces (no joke).
 
 His online presence is a little all over the place.
 

@@ -199,6 +199,9 @@ footer {
   .subtitle * {
     text-align: left;
   }
+  .subtitle-container {
+    flex-grow: 2;
+  }
   #header-dropdown {
     position: relative;
     right: 0;

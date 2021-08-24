@@ -186,6 +186,7 @@ footer {
   }
   .subtitle-spacer.right {
     min-width: 28%;
+  }
 }
 @media screen and (max-width: 1035px) {
   .title {

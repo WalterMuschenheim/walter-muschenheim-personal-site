@@ -94,19 +94,8 @@ footer h2 {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
-.subtitle-container {
-  min-width: max-content;
-}
-.subtitle-spacer.left {
-  width: 28%;
-}
-.subtitle-spacer.right {
-  min-width: 28%;
-}
 .header {
   top: -0.5rem;
-}
-.header {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -124,7 +113,6 @@ footer h2 {
   flex-wrap: wrap;
 }
 .header .local {
-  max-width: 28%;
   justify-content: flex-end;
 }
 .header .social li {
@@ -187,6 +175,17 @@ footer {
   .header-container.fixed.drop-down {
     top: 0px;
   }
+  .header .local {
+    max-width: 28%;
+  }
+  .subtitle-container {
+    min-width: max-content;
+  }
+  .subtitle-spacer.left {
+    width: 28%;
+  }
+  .subtitle-spacer.right {
+    min-width: 28%;
 }
 @media screen and (max-width: 1035px) {
   .title {
